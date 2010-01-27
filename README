@@ -4,7 +4,7 @@ mockIMAP is a plugin that compliments MockSMTP.app http://mocksmtpapp.com/. Mock
 
 ## install
 
-script/plugin install git://github.com/thinkbohemian/MailFactory.git
+script/plugin install git://github.com/thinkbohemian/mockIMAP.git
 
 requires sqlite3
 
@@ -19,7 +19,7 @@ sudo gem install sqlite3-ruby
 Note, :location is optional and will default to /Users/yourusername/Documents/MockSMTP/default.data. You can find this path by opening preferences in MockSMTP.
 
 
-## Example
+## Examples
 
 # get array of all emails
 >> emails = getMockEmails
