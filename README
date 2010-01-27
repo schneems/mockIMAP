@@ -13,7 +13,6 @@ sudo gem install sqlite3-ruby
 
 ## Parameters
 
-:mailer => (the name of your mailer model)
 :location => (location to the default.data file in mockSMTP) 
 
 Note, :location is optional and will default to /Users/yourusername/Documents/MockSMTP/default.data. You can find this path by opening preferences in MockSMTP.
