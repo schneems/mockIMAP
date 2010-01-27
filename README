@@ -21,17 +21,21 @@ Note, :location is optional and will default to /Users/yourusername/Documents/Mo
 
 ## Example
 
->> mockReceive(:mailer => "MyMailer", :location => '/Users/richardschneeman/Documents/MockSMTP/default.data')
-=> #<Ticket id: 10, from_email: "canary@example.com", ticket_collaterals: nil, to_email: "foo@example.com" ... >
+# get array of all emails
+>> emails = getMockEmails
+=> [email(0)...email(last)]
 
 
->> mockReceive(:mailer => "MyMailer")
-=> #<Ticket id: 11, from_email: "canary@example.com", ticket_collaterals: nil, to_email: "foo@example.com" ... >
+# get last email sent
+>> lastEmail = getMockEmails.last
+=> email(last)
 
+# specify location of the mockSMTP data file - (only needed if you move the data file)
+>> emails = getMockEmails(:location => '/Users/richardschneeman/Documents/MockSMTP/default.data'
+=>  [email(0)...email(last)]
 
 
 ## About
-
 
 I created this to help test out my rails application WhySpam.Me allows you to generate a  [free disposable email](http://whyspam.me/) that you can give to websites. If they start to send you spam, you can destroy the disposable email and submit a survey letting the world know who sells your information.  If you want to fight back against spam, or just want to check out my site i would appreciate the visit. WhySpam is a creative commons licensed open source project, help out at:  http://github.com/thinkbohemian/WhySpam/tree/master
 
