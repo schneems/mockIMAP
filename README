@@ -1,0 +1,47 @@
+## mockIMAP
+
+mockIMAP is a plugin that compliments MockSMTP.app http://mocksmtpapp.com/. MockSMTP allows you to send and view emails in a test environment without a connection to the internet. If you are utilizing mockSMTP then the mockIMAP is a plugin that will allow you to test your receive method by downloading the last message sent to the test SMTP server. 
+
+## install
+
+script/plugin install git://github.com/thinkbohemian/MailFactory.git
+
+requires sqlite3
+
+sudo gem install sqlite3-ruby
+
+
+## Parameters
+
+:mailer => (the name of your mailer model)
+:location => (location to the default.data file in mockSMTP) 
+
+Note, :location is optional and will default to /Users/yourusername/Documents/MockSMTP/default.data. You can find this path by opening preferences in MockSMTP.
+
+
+## Example
+
+>> mockReceive(:mailer => "MyMailer", :location => '/Users/richardschneeman/Documents/MockSMTP/default.data')
+=> #<Ticket id: 10, from_email: "canary@example.com", ticket_collaterals: nil, to_email: "foo@example.com" ... >
+
+
+>> mockReceive(:mailer => "MyMailer")
+=> #<Ticket id: 11, from_email: "canary@example.com", ticket_collaterals: nil, to_email: "foo@example.com" ... >
+
+
+
+## About
+
+
+I created this to help test out my rails application WhySpam.Me allows you to generate a  [free disposable email](http://whyspam.me/) that you can give to websites. If they start to send you spam, you can destroy the disposable email and submit a survey letting the world know who sells your information.  If you want to fight back against spam, or just want to check out my site i would appreciate the visit. WhySpam is a creative commons licensed open source project, help out at:  http://github.com/thinkbohemian/WhySpam/tree/master
+
+
+I am not affiliated with mockSMTP
+
+
+Copyright (c) 2009 [Richard Schneeman || http://www.thinkbohemian.com ], released under the MIT license 
+
+## Issues
+
+1. Will not download attachments (i think, haven't tested this)
+2. Need feedback for additional use cases, I only ever need the last email sent, but maybe a lookup based on to_email, etc. Let me know how you would envision this plugin working. 
